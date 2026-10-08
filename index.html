@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜单搜索器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>菜单搜索器</h1>
+        <p class="subtitle">搜索你想吃的菜品</p>
+
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="输入菜名、食材或分类..." oninput="filterMenu()">
+            <span class="search-icon">&#128269;</span>
+        </div>
+
+        <div class="category-tabs">
+            <button class="tab active" onclick="filterByCategory('all', this)">全部</button>
+            <button class="tab" onclick="filterByCategory('hot', this)">热菜</button>
+            <button class="tab" onclick="filterByCategory('cold', this)">凉菜</button>
+            <button class="tab" onclick="filterByCategory('soup', this)">汤类</button>
+            <button class="tab" onclick="filterByCategory('staple', this)">主食</button>
+            <button class="tab" onclick="filterByCategory('drink', this)">饮品</button>
+        </div>
+
+        <div id="result-count" class="result-count"></div>
+
+        <div id="menu-list"></div>
+
+        <div id="no-result" style="display:none;">
+            <p>没有找到相关菜品，换个关键词试试？</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
